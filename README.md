@@ -4,7 +4,7 @@
 
 ## 手机/外网访问
 
-直接打开 GitHub Pages 网址（部署完成后填在这里）。
+直接打开：<https://grace4201.github.io/hk-us-market-brief/>
 
 ## 本地打开
 
