@@ -13,7 +13,7 @@
 也可以手动起服务：
 
 ```bash
-cd /Users/cici/hk-us-market-brief
+cd ~/hk-us-market-brief
 python3 -m http.server 4173
 ```
 
@@ -22,7 +22,7 @@ python3 -m http.server 4173
 ## 手动跑一次自动更新
 
 ```bash
-cd /Users/cici/hk-us-market-brief
+cd ~/hk-us-market-brief
 node scripts/update-market-brief.mjs
 ```
 
