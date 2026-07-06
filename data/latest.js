@@ -1,16 +1,16 @@
 window.MARKET_BRIEF = {
-  "generatedAt": "2026-07-06T04:06:56.434Z",
+  "generatedAt": "2026-07-06T04:46:55.369Z",
   "reportDate": "7月6日",
   "updateTime": "08:30 HKT",
   "nextUpdateHour": 8,
   "nextUpdateMinute": 30,
-  "headline": "美股上涨1.82%，港股上涨2.46%，半导体重挫仍是主导风险",
+  "headline": "美股上涨1.82%，港股上涨2.50%，半导体重挫仍是主导风险",
   "deck": "7/3 美股收盘数据与 7/6 港股最新数据自动汇总。内容基于行情变动生成，不自动编写未经验证的传闻。",
   "tape": [
     "DJIA +1.89%",
     "S&P 500 +1.71%",
     "NASDAQ +1.87%",
-    "HSI +3.76%",
+    "HSI +3.84%",
     "SOX -9.43%"
   ],
   "signals": [
@@ -20,7 +20,7 @@ window.MARKET_BRIEF = {
     },
     {
       "label": "港股主线",
-      "value": "上涨2.46%，反弹持续性待确认"
+      "value": "上涨2.50%，反弹持续性待确认"
     },
     {
       "label": "操作基调",
@@ -63,11 +63,11 @@ window.MARKET_BRIEF = {
     "items": [
       {
         "name": "恒生指数",
-        "value": "23,524点，涨3.76%（+852点）"
+        "value": "23,543点，涨3.84%（+871点）"
       },
       {
         "name": "恒生科技",
-        "value": "4,551点，涨1.15%（+52点）"
+        "value": "4,551点，涨1.16%（+52点）"
       },
       {
         "name": "盘面节奏",
@@ -82,9 +82,9 @@ window.MARKET_BRIEF = {
         "value": "关注解禁、成交额和南向资金变化"
       }
     ],
-    "signal": "恒指、恒生科技平均+2.46%，港股延续反弹，恒指与科技指数同步走高，但仍需观察成交和持续性。"
+    "signal": "恒指、恒生科技平均+2.50%，港股延续反弹，恒指与科技指数同步走高，但仍需观察成交和持续性。"
   },
-  "summary": "美股上涨1.82%，港股上涨2.46%，半导体重挫仍是主导风险；操作上建议短期谨慎，控制仓位。",
+  "summary": "美股上涨1.82%，港股上涨2.50%，半导体重挫仍是主导风险；操作上建议短期谨慎，控制仓位。",
   "sources": [
     "Yahoo Finance chart API"
   ],
@@ -160,17 +160,17 @@ window.MARKET_BRIEF = {
     },
     "hsi": {
       "symbol": "^HSI",
-      "price": 23524.19,
-      "change": 852.3299999999981,
-      "changePercent": 3.7594180627438507,
-      "marketTime": 1783309908
+      "price": 23542.97,
+      "change": 871.1100000000006,
+      "changePercent": 3.8422520251977588,
+      "marketTime": 1783310700
     },
     "hstech": {
       "symbol": "HSTECH.HK",
-      "price": 4550.93,
-      "change": 51.93000000000029,
-      "changePercent": 1.154256501444772,
-      "marketTime": 1783309914
+      "price": 4551.34,
+      "change": 52.340000000000146,
+      "changePercent": 1.1633696376972693,
+      "marketTime": 1783310700
     }
   }
 };
