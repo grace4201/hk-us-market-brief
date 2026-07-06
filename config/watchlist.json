@@ -1,0 +1,16 @@
+{
+  "core": [
+    { "key": "dow", "label": "道指", "yahoo": "^DJI", "tape": "DJIA", "market": "us" },
+    { "key": "sp500", "label": "标普500", "yahoo": "^GSPC", "tape": "S&P 500", "market": "us" },
+    { "key": "nasdaq", "label": "纳指", "yahoo": "^IXIC", "tape": "NASDAQ", "market": "us" },
+    { "key": "sox", "label": "费半", "yahoo": "^SOX", "tape": "SOX", "market": "us" },
+    { "key": "intel", "label": "英特尔", "yahoo": "INTC", "market": "us-stock" },
+    { "key": "amd", "label": "超微", "yahoo": "AMD", "market": "us-stock" },
+    { "key": "tsm", "label": "台积电ADR", "yahoo": "TSM", "market": "us-stock" },
+    { "key": "nvidia", "label": "辉达", "yahoo": "NVDA", "market": "us-stock" },
+    { "key": "meta", "label": "Meta", "yahoo": "META", "market": "us-stock" },
+    { "key": "hsi", "label": "恒生指数", "yahoo": "^HSI", "tape": "HSI", "market": "hk" },
+    { "key": "hstech", "label": "恒生科技", "yahoo": "HSTECH.HK", "tape": "HSTECH", "market": "hk" }
+  ],
+  "custom": []
+}

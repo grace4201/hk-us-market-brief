@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>港美股行情速报</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=IBM+Plex+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="toolbar" aria-label="历史和下载工具">
+      <div>
+        <span class="eyebrow">Archive</span>
+        <label for="historySelect">历史速报</label>
+      </div>
+      <select id="historySelect" aria-label="选择历史速报"></select>
+      <button type="button" id="downloadImage">下载当前速报图片</button>
+    </nav>
+
+    <div id="marketStatusBanner" class="status-banner" hidden></div>
+
+    <div id="captureArea">
+    <section class="masthead" aria-label="港美股行情速报头图">
+      <div class="market-tape" id="marketTape" aria-label="主要指数行情"></div>
+      <div class="masthead-grid">
+        <div class="date-block">
+          <span class="eyebrow" id="updateRule">每日固定更新 · 08:30 HKT</span>
+          <strong id="reportDate">--</strong>
+          <small>今日港美股行情速报</small>
+        </div>
+        <div class="headline-block">
+          <h1 id="headline">正在读取行情</h1>
+          <p id="deck">页面会读取自动抓取脚本生成的最新数据。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal-strip" id="signalStrip" aria-label="核心信号"></section>
+
+    <section class="brief-grid">
+      <article class="market-card us-card">
+        <header>
+          <span class="market-label">美股</span>
+          <h2 id="usTitle">--</h2>
+        </header>
+        <ul class="quote-list" id="usList"></ul>
+        <footer>
+          <span>关键信号</span>
+          <p id="usSignal">--</p>
+        </footer>
+      </article>
+
+      <article class="market-card hk-card">
+        <header>
+          <span class="market-label">港股</span>
+          <h2 id="hkTitle">--</h2>
+        </header>
+        <ul class="quote-list" id="hkList"></ul>
+        <footer>
+          <span>关键信号</span>
+          <p id="hkSignal">--</p>
+        </footer>
+      </article>
+    </section>
+
+    <section class="trend-card" aria-label="近期涨跌幅走势">
+      <header>
+        <span class="eyebrow">Trend</span>
+        <h2>近期涨跌幅走势</h2>
+      </header>
+      <div id="trendChart"></div>
+    </section>
+
+    <section class="watchlist-card" id="watchlistSection" hidden aria-label="自选股">
+      <header>
+        <span class="eyebrow">Watchlist</span>
+        <h2>自选股</h2>
+      </header>
+      <ul class="quote-list" id="watchlistList"></ul>
+    </section>
+
+    <section class="summary-card">
+      <span>总结一句话</span>
+      <p id="summary">--</p>
+    </section>
+
+    <section class="update-panel" aria-label="更新机制说明">
+      <div>
+        <span class="eyebrow">Auto Update</span>
+        <h2>每天固定时间自动拉取行情</h2>
+      </div>
+      <p id="updateStatus">数据由 <code>scripts/update-market-brief.mjs</code> 自动生成到 <code>data/latest.js</code>，页面打开时自动读取。</p>
+    </section>
+    </div>
+  </main>
+  <script src="./data/latest.js"></script>
+  <script src="./data/history-index.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

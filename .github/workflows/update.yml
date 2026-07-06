@@ -1,0 +1,35 @@
+name: 每日更新行情数据
+
+on:
+  schedule:
+    # 00:30 UTC = 08:30 香港时间
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: 抓取行情并生成速报
+        run: node scripts/update-market-brief.mjs
+
+      - name: 提交并推送数据
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "数据无变化，跳过提交"
+          else
+            git commit -m "自动更新行情数据 $(TZ=Asia/Hong_Kong date '+%Y-%m-%d %H:%M')"
+            git push
+          fi

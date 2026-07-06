@@ -1,0 +1,10 @@
+{
+  "name": "hk-us-market-brief",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update": "node scripts/update-market-brief.mjs",
+    "serve": "python3 -m http.server 4173"
+  }
+}
