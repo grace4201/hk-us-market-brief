@@ -294,7 +294,7 @@ async function writeBriefFiles(brief) {
         hsi: brief.rawQuotes.hsi.changePercent
       }
     },
-    ...existingIndex.filter((item) => item.id !== brief.generatedAt && item.file !== historyPath)
+    ...existingIndex.filter((item) => item.id !== brief.generatedAt && item.file !== historyPath && item.label !== brief.reportDate)
   ].slice(0, 365);
 
   await writeFile(path.join(dataDir, "latest.json"), `${json}\n`, "utf8");

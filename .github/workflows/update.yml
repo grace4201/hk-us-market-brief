@@ -4,6 +4,8 @@ on:
   schedule:
     # 00:52 UTC = 08:52 香港时间（避开整点/半点的 GitHub 定时任务高峰，高峰期任务会被跳过）
     - cron: "52 0 * * *"
+    # 01:52 UTC = 09:52 香港时间，备班：主班被 GitHub 跳过时的补救
+    - cron: "52 1 * * *"
   workflow_dispatch:
 
 permissions:
