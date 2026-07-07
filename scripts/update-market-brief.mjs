@@ -90,6 +90,42 @@ async function fetchQuotes(symbols) {
   return Object.fromEntries(entries);
 }
 
+// 拉 BTC 近一年日线，算距一年内最高收盘价的回撤幅度，用作周期位置参考
+async function fetchBtcYearContext(currentPrice) {
+  try {
+    const url = new URL("https://query1.finance.yahoo.com/v8/finance/chart/BTC-USD");
+    url.searchParams.set("range", "1y");
+    url.searchParams.set("interval", "1d");
+    const response = await fetch(url, {
+      headers: { "accept": "application/json", "user-agent": "Mozilla/5.0 hk-us-market-brief/1.0" }
+    });
+    if (!response.ok) return null;
+    const payload = await response.json();
+    const closes = (payload?.chart?.result?.[0]?.indicators?.quote?.[0]?.close || []).filter((v) => Number.isFinite(v));
+    if (!closes.length) return null;
+    const yearHigh = Math.max(...closes, currentPrice);
+    const drawdownPercent = ((currentPrice - yearHigh) / yearHigh) * 100;
+    return { yearHigh, drawdownPercent };
+  } catch {
+    return null;
+  }
+}
+
+// 上一次比特币减半：2024年4月20日；历史上前三轮牛市都在减半后 12~18 个月见顶
+const LAST_HALVING_UTC = Date.UTC(2024, 3, 20);
+
+function halvingCyclePhase() {
+  const months = Math.round((Date.now() - LAST_HALVING_UTC) / (30.44 * 24 * 36e5));
+  const phase = months < 6
+    ? "历史上多为减半后的蓄势期"
+    : months < 18
+      ? "历史上的主升浪窗口，注意节奏但不必过度悲观"
+      : months < 30
+        ? "历史上牛市见顶转熊的高风险窗口，建议控制仓位、逐步落袋"
+        : "距下次减半渐近，历史上的熊市筑底/分批吸筹阶段";
+  return { months, phase };
+}
+
 function normalizeQuote(meta, quote = {}) {
   const price = Number(quote.regularMarketPrice ?? 0);
   const change = Number(quote.regularMarketChange ?? 0);
@@ -181,7 +217,7 @@ function marketStatusNote(quotes) {
   return { usStale, hkStale, note };
 }
 
-function buildBrief(quotes, { customSymbols = [] } = {}) {
+function buildBrief(quotes, { customSymbols = [], btcYearContext = null } = {}) {
   const reportDate = formatDateParts();
   const usDate = marketDateLabel(quotes.dow.marketTime);
   const hkDate = marketDateLabel(quotes.hsi.marketTime);
@@ -253,7 +289,12 @@ function buildBrief(quotes, { customSymbols = [] } = {}) {
         { name: "比特币", value: quoteLine(quotes.btc, " 美元") },
         { name: "以太坊", value: quoteLine(quotes.eth, " 美元") },
         { name: "BNB", value: quoteLine(quotes.bnb, " 美元") },
-        { name: "Circle", value: `${signedPercent(quotes.crcl.changePercent)}（收 ${fmt.format(quotes.crcl.price)} 美元）`, note: "稳定币 USDC 发行商，Web3 合规化风向标" }
+        { name: "Circle", value: `${signedPercent(quotes.crcl.changePercent)}（收 ${fmt.format(quotes.crcl.price)} 美元）`, note: "稳定币 USDC 发行商，Web3 合规化风向标" },
+        {
+          name: "周期参考",
+          value: `距 2024年4月 减半约 ${halvingCyclePhase().months} 个月，${halvingCyclePhase().phase}${btcYearContext ? `；BTC 现价较一年内高点（${fmt.format(btcYearContext.yearHigh)} 美元）回撤 ${pct.format(Math.abs(btcYearContext.drawdownPercent))}%` : ""}`,
+          note: "四年减半周期是历史规律而非必然，ETF 时代节奏可能改变，仅供仓位节奏参考"
+        }
       ],
       signal: `BTC、ETH、BNB 平均${signedPercent(cryptoAvg)}，${cryptoCommentary(cryptoAvg, quotes.btc.changePercent)}`
     },
@@ -344,7 +385,8 @@ async function main() {
 
   const watchlist = await loadWatchlist();
   const quotes = await fetchQuotes(watchlist.all);
-  const brief = buildBrief(quotes, { customSymbols: watchlist.custom });
+  const btcYearContext = await fetchBtcYearContext(quotes.btc.price);
+  const brief = buildBrief(quotes, { customSymbols: watchlist.custom, btcYearContext });
   await writeBriefFiles(brief);
   console.log(`Updated market brief: ${brief.reportDate} ${brief.generatedAt}`);
 }
