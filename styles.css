@@ -384,6 +384,23 @@ h1.headline-long {
 
 .us-card .market-label { background: var(--red); }
 .hk-card .market-label { background: var(--green); }
+.web3-card .market-label { background: #f7931a; }
+
+.web3-card {
+  grid-column: 1 / -1;
+}
+
+.web3-card .quote-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+}
+
+@media (max-width: 860px) {
+  .web3-card .quote-list {
+    grid-template-columns: 1fr;
+  }
+}
 
 .market-card h2 {
   font-family: "Noto Serif SC", serif;

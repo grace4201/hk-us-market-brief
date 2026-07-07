@@ -1,17 +1,18 @@
 window.MARKET_BRIEF = {
-  "generatedAt": "2026-07-07T03:33:46.553Z",
+  "generatedAt": "2026-07-07T03:50:53.002Z",
   "reportDate": "7月7日",
   "updateTime": "08:52 HKT",
   "nextUpdateHour": 8,
   "nextUpdateMinute": 52,
-  "headline": "美股上涨2.67%，港股上涨1.11%，半导体降温压制风险偏好",
+  "headline": "美股上涨2.67%，港股上涨0.92%，半导体降温压制风险偏好",
   "deck": "7/7 美股收盘数据与 7/7 港股最新数据自动汇总。内容基于行情变动生成，不自动编写未经验证的传闻。",
   "tape": [
     "DJIA +2.27%",
     "S&P 500 +2.49%",
     "NASDAQ +3.26%",
-    "HSI +2.20%",
-    "SOX -2.30%"
+    "HSI +2.11%",
+    "SOX -2.30%",
+    "BTC +0.97%"
   ],
   "signals": [
     {
@@ -20,11 +21,11 @@ window.MARKET_BRIEF = {
     },
     {
       "label": "港股主线",
-      "value": "上涨1.11%，反弹持续性待确认"
+      "value": "上涨0.92%，反弹力度偏弱"
     },
     {
       "label": "操作基调",
-      "value": "等待趋势确认后再加仓"
+      "value": "短期谨慎，控制仓位"
     }
   ],
   "us": {
@@ -63,15 +64,15 @@ window.MARKET_BRIEF = {
     "items": [
       {
         "name": "恒生指数",
-        "value": "23,533点，涨2.20%（+507点）"
+        "value": "23,513点，涨2.11%（+486点）"
       },
       {
         "name": "恒生科技",
-        "value": "4,542点，微平（+1点）"
+        "value": "4,529点，跌0.27%（-12点）"
       },
       {
         "name": "盘面节奏",
-        "value": "指数走高，科技方向回暖"
+        "value": "指数承压，反弹持续性不足"
       },
       {
         "name": "关键位置",
@@ -82,16 +83,39 @@ window.MARKET_BRIEF = {
         "value": "关注解禁、成交额和南向资金变化"
       }
     ],
-    "signal": "恒指、恒生科技平均+1.11%，港股延续反弹，恒指与科技指数同步走高，但仍需观察成交和持续性。"
+    "signal": "恒指、恒生科技平均+0.92%，港股反弹力度偏弱，恒指与科技指数仍在关键位附近反复，短线以防守和确认支撑为主。"
   },
-  "summary": "美股上涨2.67%，港股上涨1.11%，半导体降温压制风险偏好；操作上可逢低分批，注意追高风险。",
+  "web3": {
+    "title": "24小时行情",
+    "items": [
+      {
+        "name": "比特币",
+        "value": "63,148 美元，涨0.97%（+604 美元）"
+      },
+      {
+        "name": "以太坊",
+        "value": "1,770 美元，涨0.76%（+13 美元）"
+      },
+      {
+        "name": "BNB",
+        "value": "578 美元，涨0.84%（+5 美元）"
+      },
+      {
+        "name": "Circle",
+        "value": "-6.69%（收 69 美元）",
+        "note": "稳定币 USDC 发行商，Web3 合规化风向标"
+      }
+    ],
+    "signal": "BTC、ETH、BNB 平均+0.85%，币圈波动平稳，暂无方向性信号。"
+  },
+  "summary": "美股上涨2.67%，港股上涨0.92%，半导体降温压制风险偏好；操作上建议短期谨慎，控制仓位。",
   "sources": [
     "Yahoo Finance chart API"
   ],
   "marketStatus": {
-    "usStale": false,
+    "usStale": true,
     "hkStale": false,
-    "note": null
+    "note": "美股休市中，美股数据与上次一致。"
   },
   "watchlist": [],
   "rawQuotes": {
@@ -160,17 +184,45 @@ window.MARKET_BRIEF = {
     },
     "hsi": {
       "symbol": "^HSI",
-      "price": 23533.24,
-      "change": 506.5600000000013,
-      "changePercent": 2.1998829184233304,
-      "marketTime": 1783394324
+      "price": 23512.92,
+      "change": 486.23999999999796,
+      "changePercent": 2.1116374570715273,
+      "marketTime": 1783395354
     },
     "hstech": {
       "symbol": "HSTECH.HK",
-      "price": 4542.35,
-      "change": 1.1200000000008004,
-      "changePercent": 0.02466292171946368,
-      "marketTime": 1783394324
+      "price": 4529,
+      "change": -12.229999999999563,
+      "changePercent": -0.26931029699001297,
+      "marketTime": 1783395354
+    },
+    "btc": {
+      "symbol": "BTC-USD",
+      "price": 63148.02,
+      "change": 603.8199999999997,
+      "changePercent": 0.9654292484355059,
+      "marketTime": 1783396253
+    },
+    "eth": {
+      "symbol": "ETH-USD",
+      "price": 1769.89,
+      "change": 13.37130000000002,
+      "changePercent": 0.7612386933313047,
+      "marketTime": 1783396251
+    },
+    "bnb": {
+      "symbol": "BNB-USD",
+      "price": 578.24,
+      "change": 4.797800000000052,
+      "changePercent": 0.8366667120069036,
+      "marketTime": 1783396213
+    },
+    "crcl": {
+      "symbol": "CRCL",
+      "price": 68.65,
+      "change": -4.9199999999999875,
+      "changePercent": -6.687508495310572,
+      "marketTime": 1783368002
     }
   }
 };

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=IBM+Plex+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=20260707" />
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
@@ -65,6 +65,18 @@
           <p id="hkSignal">--</p>
         </footer>
       </article>
+
+      <article class="market-card web3-card" id="web3Card" hidden>
+        <header>
+          <span class="market-label">Web3</span>
+          <h2 id="web3Title">--</h2>
+        </header>
+        <ul class="quote-list" id="web3List"></ul>
+        <footer>
+          <span>关键信号</span>
+          <p id="web3Signal">--</p>
+        </footer>
+      </article>
     </section>
 
     <section class="trend-card" aria-label="近期涨跌幅走势">
@@ -99,6 +111,6 @@
   </main>
   <script src="./data/latest.js"></script>
   <script src="./data/history-index.js"></script>
-  <script src="./app.js"></script>
+  <script src="./app.js?v=20260707"></script>
 </body>
 </html>

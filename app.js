@@ -89,7 +89,8 @@ const renderWatchlist = () => {
 const TREND_LINES = [
   { key: "dow", label: "道指", color: "#c53b2d" },
   { key: "nasdaq", label: "纳指", color: "#b88734" },
-  { key: "hsi", label: "恒指", color: "#176b4d" }
+  { key: "hsi", label: "恒指", color: "#176b4d" },
+  { key: "btc", label: "BTC", color: "#f7931a" }
 ];
 
 function renderTrendChart() {
@@ -109,20 +110,30 @@ function renderTrendChart() {
   const height = 200;
   const padX = 20;
   const padY = 20;
-  const allValues = points.flatMap((p) => TREND_LINES.map((line) => p.closes[line.key] ?? 0));
+  const allValues = points.flatMap((p) => TREND_LINES.map((line) => p.closes[line.key]).filter((v) => Number.isFinite(v)));
   const maxAbs = Math.max(2, ...allValues.map((v) => Math.abs(v)));
   const xStep = (width - padX * 2) / (points.length - 1);
   const yFor = (value) => height / 2 - (value / maxAbs) * (height / 2 - padY);
   const xFor = (index) => padX + index * xStep;
 
+  // 旧历史数据里可能缺某条线（比如后来才加的 BTC），缺的点直接跳过不画
   const paths = TREND_LINES.map((line) => {
-    const d = points.map((p, index) => `${index === 0 ? "M" : "L"}${xFor(index).toFixed(1)},${yFor(p.closes[line.key] ?? 0).toFixed(1)}`).join(" ");
-    return `<path d="${d}" fill="none" stroke="${line.color}" stroke-width="2.5" />`;
+    let d = "";
+    let started = false;
+    points.forEach((p, index) => {
+      const value = p.closes[line.key];
+      if (!Number.isFinite(value)) { started = false; return; }
+      d += `${started ? "L" : "M"}${xFor(index).toFixed(1)},${yFor(value).toFixed(1)} `;
+      started = true;
+    });
+    return d ? `<path d="${d.trim()}" fill="none" stroke="${line.color}" stroke-width="2.5" />` : "";
   }).join("");
 
-  const dots = TREND_LINES.flatMap((line) => points.map((p, index) => `
-    <circle cx="${xFor(index).toFixed(1)}" cy="${yFor(p.closes[line.key] ?? 0).toFixed(1)}" r="3" fill="${line.color}" />
-  `)).join("");
+  const dots = TREND_LINES.flatMap((line) => points.map((p, index) => {
+    const value = p.closes[line.key];
+    if (!Number.isFinite(value)) return "";
+    return `<circle cx="${xFor(index).toFixed(1)}" cy="${yFor(value).toFixed(1)}" r="3" fill="${line.color}" />`;
+  })).join("");
 
   const labels = points.map((p, index) => `
     <text x="${xFor(index).toFixed(1)}" y="${height - 4}" font-size="11" fill="var(--muted)" text-anchor="middle">${escapeHtml(p.label || "")}</text>
@@ -206,6 +217,16 @@ function renderBrief() {
   text("#hkTitle", briefData.hk?.title);
   text("#usSignal", briefData.us?.signal);
   text("#hkSignal", briefData.hk?.signal);
+
+  const web3Card = document.querySelector("#web3Card");
+  if (web3Card) {
+    web3Card.hidden = !briefData.web3;
+    if (briefData.web3) {
+      text("#web3Title", briefData.web3.title);
+      text("#web3Signal", briefData.web3.signal);
+      renderList("#web3List", briefData.web3.items);
+    }
+  }
   text("#summary", briefData.summary);
   text("title", `港美股行情速报｜${briefData.reportDate}`);
 

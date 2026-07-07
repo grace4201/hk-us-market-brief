@@ -10,7 +10,11 @@
     { "key": "nvidia", "label": "辉达", "yahoo": "NVDA", "market": "us-stock" },
     { "key": "meta", "label": "Meta", "yahoo": "META", "market": "us-stock" },
     { "key": "hsi", "label": "恒生指数", "yahoo": "^HSI", "tape": "HSI", "market": "hk" },
-    { "key": "hstech", "label": "恒生科技", "yahoo": "HSTECH.HK", "tape": "HSTECH", "market": "hk" }
+    { "key": "hstech", "label": "恒生科技", "yahoo": "HSTECH.HK", "tape": "HSTECH", "market": "hk" },
+    { "key": "btc", "label": "比特币", "yahoo": "BTC-USD", "tape": "BTC", "market": "crypto" },
+    { "key": "eth", "label": "以太坊", "yahoo": "ETH-USD", "market": "crypto" },
+    { "key": "bnb", "label": "BNB", "yahoo": "BNB-USD", "market": "crypto" },
+    { "key": "crcl", "label": "Circle", "yahoo": "CRCL", "market": "us-stock" }
   ],
   "custom": []
 }

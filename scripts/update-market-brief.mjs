@@ -180,6 +180,7 @@ function buildBrief(quotes, { customSymbols = [], prevRawQuotes = null } = {}) {
 
   const usAvg = average([quotes.dow.changePercent, quotes.sp500.changePercent, quotes.nasdaq.changePercent]);
   const hkAvg = average([quotes.hsi.changePercent, quotes.hstech.changePercent]);
+  const cryptoAvg = average([quotes.btc.changePercent, quotes.eth.changePercent, quotes.bnb.changePercent]);
   const chipAvg = average(chipMoves.map((quote) => quote.changePercent));
   const chipsNote = chipCommentary(quotes.sox.changePercent, chipAvg);
 
@@ -205,7 +206,7 @@ function buildBrief(quotes, { customSymbols = [], prevRawQuotes = null } = {}) {
     nextUpdateMinute: UPDATE_MINUTE,
     headline,
     deck: `${usDate} 美股收盘数据与 ${hkDate} 港股最新数据自动汇总。内容基于行情变动生成，不自动编写未经验证的传闻。`,
-    tape: [quotes.dow, quotes.sp500, quotes.nasdaq, quotes.hsi, quotes.sox].map((quote) => `${quote.tape} ${signedPercent(quote.changePercent)}`),
+    tape: [quotes.dow, quotes.sp500, quotes.nasdaq, quotes.hsi, quotes.sox, quotes.btc].map((quote) => `${quote.tape} ${signedPercent(quote.changePercent)}`),
     signals: [
       { label: "美股主线", value: `${trendWord(usAvg)}${changePercentText(usAvg)}，${chipsNote}` },
       { label: "港股主线", value: `${trendWord(hkAvg)}${changePercentText(hkAvg)}，${hkWeak ? "反弹力度偏弱" : "反弹持续性待确认"}` },
@@ -233,6 +234,20 @@ function buildBrief(quotes, { customSymbols = [], prevRawQuotes = null } = {}) {
         { name: "风险点", value: "关注解禁、成交额和南向资金变化" }
       ],
       signal: hkSignal
+    },
+    web3: {
+      title: "24小时行情",
+      items: [
+        { name: "比特币", value: quoteLine(quotes.btc, " 美元") },
+        { name: "以太坊", value: quoteLine(quotes.eth, " 美元") },
+        { name: "BNB", value: quoteLine(quotes.bnb, " 美元") },
+        { name: "Circle", value: `${signedPercent(quotes.crcl.changePercent)}（收 ${fmt.format(quotes.crcl.price)} 美元）`, note: "稳定币 USDC 发行商，Web3 合规化风向标" }
+      ],
+      signal: `BTC、ETH、BNB 平均${signedPercent(cryptoAvg)}，${cryptoAvg > 3
+        ? "币圈风险偏好明显升温，注意追高与回撤节奏。"
+        : cryptoAvg < -3
+          ? "币圈普跌降温，关注是否拖累整体风险资产情绪。"
+          : "币圈波动平稳，暂无方向性信号。"}`
     },
     summary,
     sources: ["Yahoo Finance chart API"],
@@ -291,7 +306,8 @@ async function writeBriefFiles(brief) {
       closes: {
         dow: brief.rawQuotes.dow.changePercent,
         nasdaq: brief.rawQuotes.nasdaq.changePercent,
-        hsi: brief.rawQuotes.hsi.changePercent
+        hsi: brief.rawQuotes.hsi.changePercent,
+        btc: brief.rawQuotes.btc.changePercent
       }
     },
     ...existingIndex.filter((item) => item.id !== brief.generatedAt && item.file !== historyPath && item.label !== brief.reportDate)
