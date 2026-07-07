@@ -11,7 +11,7 @@ const logsDir = path.join(root, "logs");
 const configPath = path.join(root, "config", "watchlist.json");
 
 const UPDATE_HOUR = 8;
-const UPDATE_MINUTE = 30;
+const UPDATE_MINUTE = 52;
 
 async function loadWatchlist() {
   const raw = await readFile(configPath, "utf8");
@@ -200,7 +200,7 @@ function buildBrief(quotes, { customSymbols = [], prevRawQuotes = null } = {}) {
   return {
     generatedAt: new Date().toISOString(),
     reportDate: reportDate.label,
-    updateTime: "08:30 HKT",
+    updateTime: `${String(UPDATE_HOUR).padStart(2, "0")}:${String(UPDATE_MINUTE).padStart(2, "0")} HKT`,
     nextUpdateHour: UPDATE_HOUR,
     nextUpdateMinute: UPDATE_MINUTE,
     headline,

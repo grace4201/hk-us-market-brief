@@ -1,6 +1,6 @@
 # 港美股行情速报
 
-静态网站 + 自动行情抓取脚本。部署在 GitHub Pages 上，手机、电脑浏览器随时可看；数据由 GitHub Actions 每天香港时间 08:30 在云端自动更新，不依赖本地电脑开机。
+静态网站 + 自动行情抓取脚本。部署在 GitHub Pages 上，手机、电脑浏览器随时可看；数据由 GitHub Actions 每天香港时间 08:52 在云端自动更新，不依赖本地电脑开机。
 
 ## 手机/外网访问
 
@@ -53,7 +53,7 @@ node scripts/update-market-brief.mjs
 
 定时任务在 GitHub Actions 上跑，配置文件：`.github/workflows/update.yml`。
 
-- 每天 `00:30 UTC`（= 香港时间 08:30）自动抓行情、提交新数据，GitHub Pages 随之自动重新发布。
+- 每天 `00:52 UTC`（= 香港时间 08:52）自动抓行情、提交新数据，GitHub Pages 随之自动重新发布。
 - 改时间：编辑 workflow 里的 `cron`（注意写的是 UTC 时间，比香港慢 8 小时）。
 - 手动触发一次：GitHub 仓库页面 → Actions → 「每日更新行情数据」→ Run workflow。
 - 如果某天抓取失败，GitHub 会给账号邮箱发失败通知邮件；本地手动跑失败时还会弹 macOS 系统通知。
