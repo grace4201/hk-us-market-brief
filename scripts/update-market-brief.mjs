@@ -155,21 +155,33 @@ function chipCommentary(soxPercent, chipAvg) {
   return "半导体波动有限，非主导变量";
 }
 
-function marketStatusNote(quotes, prevRawQuotes) {
-  if (!prevRawQuotes) return { usStale: false, hkStale: false, note: null };
-  const usStale = Boolean(prevRawQuotes.dow) && prevRawQuotes.dow.marketTime === quotes.dow.marketTime;
-  const hkStale = Boolean(prevRawQuotes.hsi) && prevRawQuotes.hsi.marketTime === quotes.hsi.marketTime;
+function cryptoCommentary(cryptoAvg, btcPercent) {
+  if (cryptoAvg > 5 || btcPercent > 6) return "币圈放量普涨、情绪偏热：不建议追高，逢急拉分批止盈更稳妥，杠杆仓注意波动放大。";
+  if (cryptoAvg > 2) return "币圈明显走强：持有为主，新仓分批建、控制杠杆，跌破短期支撑再考虑减仓。";
+  if (cryptoAvg > -2) return "币圈震荡整理：观望或定投为主，不建议重仓押方向，等待放量突破信号。";
+  if (cryptoAvg > -5) return "币圈回调降温：先等企稳信号，分批低吸比一次抄底稳，注意美股科技股联动风险。";
+  return "币圈大幅下挫：以控制风险为先，空仓观望不丢人，别急着接飞刀。";
+}
+
+// 收盘时间距现在超过 30 小时才算休市（周末/假期跳过了交易日）；
+// 正常交易日美股收盘约 4~5 小时后、港股收盘约 17 小时后就会跑更新，都远小于该阈值
+const STALE_HOURS = 30;
+
+function marketStatusNote(quotes) {
+  const ageHours = (marketTime) => marketTime ? (Date.now() - marketTime * 1000) / 36e5 : Infinity;
+  const usStale = ageHours(quotes.dow.marketTime) > STALE_HOURS;
+  const hkStale = ageHours(quotes.hsi.marketTime) > STALE_HOURS;
   const note = usStale && hkStale
-    ? "美股、港股均处于休市，本次数据与上次一致。"
+    ? "美股、港股均在休市（周末/假期），显示的是最近一个交易日的收盘数据。"
     : usStale
-      ? "美股休市中，美股数据与上次一致。"
+      ? "美股休市中（周末/假期），显示的是最近一个交易日的收盘数据。"
       : hkStale
-        ? "港股休市中，港股数据与上次一致。"
+        ? "港股休市中（周末/假期），显示的是最近一个交易日的收盘数据。"
         : null;
   return { usStale, hkStale, note };
 }
 
-function buildBrief(quotes, { customSymbols = [], prevRawQuotes = null } = {}) {
+function buildBrief(quotes, { customSymbols = [] } = {}) {
   const reportDate = formatDateParts();
   const usDate = marketDateLabel(quotes.dow.marketTime);
   const hkDate = marketDateLabel(quotes.hsi.marketTime);
@@ -243,15 +255,11 @@ function buildBrief(quotes, { customSymbols = [], prevRawQuotes = null } = {}) {
         { name: "BNB", value: quoteLine(quotes.bnb, " 美元") },
         { name: "Circle", value: `${signedPercent(quotes.crcl.changePercent)}（收 ${fmt.format(quotes.crcl.price)} 美元）`, note: "稳定币 USDC 发行商，Web3 合规化风向标" }
       ],
-      signal: `BTC、ETH、BNB 平均${signedPercent(cryptoAvg)}，${cryptoAvg > 3
-        ? "币圈风险偏好明显升温，注意追高与回撤节奏。"
-        : cryptoAvg < -3
-          ? "币圈普跌降温，关注是否拖累整体风险资产情绪。"
-          : "币圈波动平稳，暂无方向性信号。"}`
+      signal: `BTC、ETH、BNB 平均${signedPercent(cryptoAvg)}，${cryptoCommentary(cryptoAvg, quotes.btc.changePercent)}`
     },
     summary,
     sources: ["Yahoo Finance chart API"],
-    marketStatus: marketStatusNote(quotes, prevRawQuotes),
+    marketStatus: marketStatusNote(quotes),
     watchlist: customSymbols.map((meta) => ({
       name: meta.label,
       value: `${quoteLine(quotes[meta.key], meta.market === "hk" ? "点" : "美元")}`
@@ -320,15 +328,6 @@ async function writeBriefFiles(brief) {
   await writeFile(path.join(dataDir, "history-index.js"), `window.MARKET_HISTORY = ${JSON.stringify(nextIndex, null, 2)};\n`, "utf8");
 }
 
-async function readPreviousRawQuotes() {
-  try {
-    const raw = await readFile(path.join(dataDir, "latest.json"), "utf8");
-    return JSON.parse(raw)?.rawQuotes || null;
-  } catch {
-    return null;
-  }
-}
-
 function notifyFailure(error) {
   const message = String(error?.message || error)
     .replace(/[\n\r"]/g, " ")
@@ -344,9 +343,8 @@ async function main() {
   await mkdir(logsDir, { recursive: true });
 
   const watchlist = await loadWatchlist();
-  const prevRawQuotes = await readPreviousRawQuotes();
   const quotes = await fetchQuotes(watchlist.all);
-  const brief = buildBrief(quotes, { customSymbols: watchlist.custom, prevRawQuotes });
+  const brief = buildBrief(quotes, { customSymbols: watchlist.custom });
   await writeBriefFiles(brief);
   console.log(`Updated market brief: ${brief.reportDate} ${brief.generatedAt}`);
 }
