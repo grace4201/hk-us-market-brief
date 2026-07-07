@@ -38,7 +38,7 @@ node scripts/update-market-brief.mjs
 
 `config/watchlist.json` 分两组：
 
-- `core`：速报固定版面用到的指数和股票（道指、标普、纳指、费半、恒指、恒生科技、英特尔/超微/台积电/辉达/Meta）。**这些 key 是 `scripts/update-market-brief.mjs` 里写死引用的，删掉会导致生成失败**，只能改 `yahoo` 代码替换，不能删 key。
+- `core`：速报固定版面用到的指数和股票（道指、标普、纳指、费半、恒指、恒生科技、英特尔/超微/台积电/辉达/Meta，以及 Web3 卡片的比特币/以太坊/BNB/Circle）。**这些 key 是 `scripts/update-market-brief.mjs` 里写死引用的，删掉会导致生成失败**，只能改 `yahoo` 代码替换，不能删 key。
 - `custom`：额外自选股，格式同 `core`（`key`/`label`/`yahoo`/`market`），随便加。加进去的会出现在页面「自选股」卡片里，不会影响固定版面。
 
 ## 休市提示
