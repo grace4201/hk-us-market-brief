@@ -223,7 +223,7 @@ function renderBrief() {
   }
 }
 
-function initHistorySelect() {
+function populateHistorySelect() {
   const select = document.querySelector("#historySelect");
   if (!select) return;
 
@@ -240,6 +240,13 @@ function initHistorySelect() {
       ${escapeHtml(item.label || "历史速报")} · ${escapeHtml(formatGeneratedAt(item.generatedAt))}
     </option>
   `).join("");
+}
+
+function initHistorySelect() {
+  const select = document.querySelector("#historySelect");
+  if (!select) return;
+
+  populateHistorySelect();
 
   select.addEventListener("change", async (event) => {
     const file = event.target.value;
@@ -248,6 +255,30 @@ function initHistorySelect() {
     briefData = await response.json();
     renderBrief();
   });
+}
+
+// GitHub Pages/手机浏览器会缓存 data/*.js，打开页面后绕过缓存再拉一次最新数据，有更新就直接换上
+async function refreshFromNetwork() {
+  try {
+    const [latestRes, historyRes] = await Promise.all([
+      fetch("data/latest.json", { cache: "no-store" }),
+      fetch("data/history-index.json", { cache: "no-store" })
+    ]);
+    if (!latestRes.ok || !historyRes.ok) return;
+    const latest = await latestRes.json();
+    const history = await historyRes.json();
+    const changed = latest.generatedAt !== briefData.generatedAt
+      || history.length !== historyItems.length
+      || (history[0]?.id !== historyItems[0]?.id);
+    if (!changed) return;
+    briefData = latest;
+    historyItems.length = 0;
+    historyItems.push(...history);
+    renderBrief();
+    populateHistorySelect();
+  } catch {
+    // 本地 file:// 打开或断网时静默跳过，页面继续用内嵌数据
+  }
 }
 
 async function downloadCurrentImage() {
@@ -297,3 +328,4 @@ function initDownload() {
 renderBrief();
 initHistorySelect();
 initDownload();
+refreshFromNetwork();
