@@ -1,5 +1,5 @@
 window.MARKET_BRIEF = {
-  "generatedAt": "2026-07-11T03:56:55.133Z",
+  "generatedAt": "2026-07-11T04:48:34.838Z",
   "reportDate": "7月11日",
   "updateTime": "08:52 HKT",
   "nextUpdateHour": 8,
@@ -12,7 +12,7 @@ window.MARKET_BRIEF = {
     "NASDAQ +1.74%",
     "HSI +3.53%",
     "SOX +2.70%",
-    "BTC +1.32%"
+    "BTC +1.30%"
   ],
   "signals": [
     {
@@ -90,15 +90,15 @@ window.MARKET_BRIEF = {
     "items": [
       {
         "name": "比特币",
-        "value": "64,133 美元，涨1.32%（+836 美元）"
+        "value": "64,117 美元，涨1.30%（+820 美元）"
       },
       {
         "name": "以太坊",
-        "value": "1,796 美元，涨1.56%（+28 美元）"
+        "value": "1,796 美元，涨1.58%（+28 美元）"
       },
       {
         "name": "BNB",
-        "value": "575 美元，跌0.28%（-2 美元）"
+        "value": "575 美元，跌0.26%（-2 美元）"
       },
       {
         "name": "Circle",
@@ -107,7 +107,7 @@ window.MARKET_BRIEF = {
       },
       {
         "name": "周期参考",
-        "value": "距 2024年4月 减半约 27 个月，历史上牛市见顶转熊的高风险窗口，建议控制仓位、逐步落袋；BTC 现价较一年内高点（124,753 美元）回撤 48.59%",
+        "value": "距 2024年4月 减半约 27 个月，历史上牛市见顶转熊的高风险窗口，建议控制仓位、逐步落袋；BTC 现价较一年内高点（124,753 美元）回撤 48.60%",
         "note": "四年减半周期是历史规律而非必然，ETF 时代节奏可能改变，仅供仓位节奏参考"
       }
     ],
@@ -203,24 +203,24 @@ window.MARKET_BRIEF = {
     },
     "btc": {
       "symbol": "BTC-USD",
-      "price": 64133.16,
-      "change": 835.7650000000067,
-      "changePercent": 1.3203781924990858,
-      "marketTime": 1783742211
+      "price": 64117.46,
+      "change": 820.0650000000023,
+      "changePercent": 1.2955746441066056,
+      "marketTime": 1783745308
     },
     "eth": {
       "symbol": "ETH-USD",
-      "price": 1796.17,
-      "change": 27.658500000000004,
-      "changePercent": 1.5639423322947013,
-      "marketTime": 1783742212
+      "price": 1796.38,
+      "change": 27.86850000000004,
+      "changePercent": 1.5758167249689945,
+      "marketTime": 1783745310
     },
     "bnb": {
       "symbol": "BNB-USD",
-      "price": 575.21,
-      "change": -1.5865999999999758,
-      "changePercent": -0.27507096955841553,
-      "marketTime": 1783742199
+      "price": 575.27,
+      "change": -1.5266000000000304,
+      "changePercent": -0.2646686891011546,
+      "marketTime": 1783745306
     },
     "crcl": {
       "symbol": "CRCL",
