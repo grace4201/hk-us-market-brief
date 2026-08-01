@@ -1,5 +1,5 @@
 window.MARKET_BRIEF = {
-  "generatedAt": "2026-08-01T02:37:29.936Z",
+  "generatedAt": "2026-08-01T04:13:19.779Z",
   "reportDate": "8月1日",
   "updateTime": "08:52 HKT",
   "nextUpdateHour": 8,
@@ -12,7 +12,7 @@ window.MARKET_BRIEF = {
     "NASDAQ +1.59%",
     "HSI +3.69%",
     "SOX -4.30%",
-    "BTC -1.34%"
+    "BTC -1.45%"
   ],
   "signals": [
     {
@@ -90,15 +90,15 @@ window.MARKET_BRIEF = {
     "items": [
       {
         "name": "比特币",
-        "value": "63,016 美元，跌1.34%（-855 美元）"
+        "value": "62,948 美元，跌1.45%（-923 美元）"
       },
       {
         "name": "以太坊",
-        "value": "1,867 美元，跌2.77%（-53 美元）"
+        "value": "1,868 美元，跌2.70%（-52 美元）"
       },
       {
         "name": "BNB",
-        "value": "590 美元，涨3.38%（+19 美元）"
+        "value": "589 美元，涨3.16%（+18 美元）"
       },
       {
         "name": "Circle",
@@ -107,11 +107,11 @@ window.MARKET_BRIEF = {
       },
       {
         "name": "周期参考",
-        "value": "距 2024年4月 减半约 27 个月，历史上牛市见顶转熊的高风险窗口，建议控制仓位、逐步落袋；BTC 现价较一年内高点（124,753 美元）回撤 49.49%",
+        "value": "距 2024年4月 减半约 27 个月，历史上牛市见顶转熊的高风险窗口，建议控制仓位、逐步落袋；BTC 现价较一年内高点（124,753 美元）回撤 49.54%",
         "note": "四年减半周期是历史规律而非必然，ETF 时代节奏可能改变，仅供仓位节奏参考"
       }
     ],
-    "signal": "BTC、ETH、BNB 平均-0.24%，币圈震荡整理：观望或定投为主，不建议重仓押方向，等待放量突破信号。"
+    "signal": "BTC、ETH、BNB 平均-0.33%，币圈震荡整理：观望或定投为主，不建议重仓押方向，等待放量突破信号。"
   },
   "summary": "美股上涨1.23%，港股上涨2.11%，半导体降温压制风险偏好；操作上建议短期谨慎，控制仓位。",
   "sources": [
@@ -203,24 +203,24 @@ window.MARKET_BRIEF = {
     },
     "btc": {
       "symbol": "BTC-USD",
-      "price": 63016.27,
-      "change": -855.0930000000008,
-      "changePercent": -1.3387736848515364,
-      "marketTime": 1785551845
+      "price": 62948.17,
+      "change": -923.1929999999993,
+      "changePercent": -1.4453942371638435,
+      "marketTime": 1785557595
     },
     "eth": {
       "symbol": "ETH-USD",
-      "price": 1866.72,
-      "change": -53.22849999999994,
-      "changePercent": -2.772392071974844,
-      "marketTime": 1785551843
+      "price": 1868.09,
+      "change": -51.85850000000005,
+      "changePercent": -2.7010359913299786,
+      "marketTime": 1785557595
     },
     "bnb": {
       "symbol": "BNB-USD",
-      "price": 589.75,
-      "change": 19.26279999999997,
-      "changePercent": 3.376552532642269,
-      "marketTime": 1785551837
+      "price": 588.52,
+      "change": 18.032799999999952,
+      "changePercent": 3.160947344655577,
+      "marketTime": 1785557587
     },
     "crcl": {
       "symbol": "CRCL",
