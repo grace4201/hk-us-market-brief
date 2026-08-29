@@ -1,5 +1,5 @@
 window.MARKET_BRIEF = {
-  "generatedAt": "2026-08-29T07:27:23.999Z",
+  "generatedAt": "2026-08-29T08:19:25.108Z",
   "reportDate": "8月29日",
   "updateTime": "08:52 HKT",
   "nextUpdateHour": 8,
@@ -12,7 +12,7 @@ window.MARKET_BRIEF = {
     "NASDAQ +0.85%",
     "HSI -1.63%",
     "SOX -2.31%",
-    "BTC -1.33%"
+    "BTC -1.32%"
   ],
   "signals": [
     {
@@ -90,15 +90,15 @@ window.MARKET_BRIEF = {
     "items": [
       {
         "name": "比特币",
-        "value": "77,520 美元，跌1.33%（-1,045 美元）"
+        "value": "77,525 美元，跌1.32%（-1,040 美元）"
       },
       {
         "name": "以太坊",
-        "value": "2,436 美元，跌0.29%（-7 美元）"
+        "value": "2,434 美元，跌0.38%（-9 美元）"
       },
       {
         "name": "BNB",
-        "value": "687 美元，跌0.95%（-7 美元）"
+        "value": "688 美元，跌0.86%（-6 美元）"
       },
       {
         "name": "Circle",
@@ -136,7 +136,7 @@ window.MARKET_BRIEF = {
       "price": 7711.76,
       "change": 37.39000000000033,
       "changePercent": 0.4872061159417689,
-      "marketTime": 1787947200
+      "marketTime": 1787949420
     },
     "nasdaq": {
       "symbol": "^IXIC",
@@ -203,24 +203,24 @@ window.MARKET_BRIEF = {
     },
     "btc": {
       "symbol": "BTC-USD",
-      "price": 77520.27,
-      "change": -1044.7099999999919,
-      "changePercent": -1.3297400444829133,
-      "marketTime": 1787988440
+      "price": 77524.79,
+      "change": -1040.1900000000023,
+      "changePercent": -1.3239868450294296,
+      "marketTime": 1787991559
     },
     "eth": {
       "symbol": "ETH-USD",
-      "price": 2435.98,
-      "change": -7.179399999999987,
-      "changePercent": -0.29385720800697596,
-      "marketTime": 1787988440
+      "price": 2433.81,
+      "change": -9.34940000000006,
+      "changePercent": -0.3826766276486118,
+      "marketTime": 1787991553
     },
     "bnb": {
       "symbol": "BNB-USD",
-      "price": 687.4,
-      "change": -6.625760000000014,
-      "changePercent": -0.9546850249477792,
-      "marketTime": 1787988404
+      "price": 688.06,
+      "change": -5.965760000000046,
+      "changePercent": -0.8595876902321387,
+      "marketTime": 1787991556
     },
     "crcl": {
       "symbol": "CRCL",
