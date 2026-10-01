@@ -1,5 +1,5 @@
 window.MARKET_BRIEF = {
-  "generatedAt": "2026-10-01T06:35:34.242Z",
+  "generatedAt": "2026-10-01T07:50:52.705Z",
   "reportDate": "10月1日",
   "updateTime": "08:52 HKT",
   "nextUpdateHour": 8,
@@ -12,7 +12,7 @@ window.MARKET_BRIEF = {
     "NASDAQ -0.28%",
     "HSI -0.89%",
     "SOX +0.75%",
-    "BTC -0.31%"
+    "BTC -1.08%"
   ],
   "signals": [
     {
@@ -33,7 +33,7 @@ window.MARKET_BRIEF = {
     "items": [
       {
         "name": "道指",
-        "value": "50,906点，跌1.18%（-606点）"
+        "value": "50,906点，跌1.18%（-605点）"
       },
       {
         "name": "标普500",
@@ -90,15 +90,15 @@ window.MARKET_BRIEF = {
     "items": [
       {
         "name": "比特币",
-        "value": "84,195 美元，跌0.31%（-263 美元）"
+        "value": "83,542 美元，跌1.08%（-916 美元）"
       },
       {
         "name": "以太坊",
-        "value": "2,716 美元，涨1.10%（+29 美元）"
+        "value": "2,683 美元，跌0.16%（-4 美元）"
       },
       {
         "name": "BNB",
-        "value": "771 美元，跌1.02%（-8 美元）"
+        "value": "765 美元，跌1.78%（-14 美元）"
       },
       {
         "name": "Circle",
@@ -107,11 +107,11 @@ window.MARKET_BRIEF = {
       },
       {
         "name": "周期参考",
-        "value": "距 2024年4月 减半约 29 个月，历史上牛市见顶转熊的高风险窗口，建议控制仓位、逐步落袋；BTC 现价较一年内高点（124,753 美元）回撤 32.51%",
+        "value": "距 2024年4月 减半约 29 个月，历史上牛市见顶转熊的高风险窗口，建议控制仓位、逐步落袋；BTC 现价较一年内高点（124,753 美元）回撤 33.03%",
         "note": "四年减半周期是历史规律而非必然，ETF 时代节奏可能改变，仅供仓位节奏参考"
       }
     ],
-    "signal": "BTC、ETH、BNB 平均-0.08%，币圈震荡整理：观望或定投为主，不建议重仓押方向，等待放量突破信号。"
+    "signal": "BTC、ETH、BNB 平均-1.01%，币圈震荡整理：观望或定投为主，不建议重仓押方向，等待放量突破信号。"
   },
   "summary": "美股震荡走平0.72%，港股震荡走平0.39%，半导体波动有限，非主导变量；操作上建议短期谨慎，控制仓位。",
   "sources": [
@@ -126,10 +126,10 @@ window.MARKET_BRIEF = {
   "rawQuotes": {
     "dow": {
       "symbol": "^DJI",
-      "price": 50906.05,
-      "change": -605.5399999999936,
-      "changePercent": -1.1755412713915327,
-      "marketTime": 1790801316
+      "price": 50906.1,
+      "change": -605.489999999998,
+      "changePercent": -1.1754442058573575,
+      "marketTime": 1790798400
     },
     "sp500": {
       "symbol": "^GSPC",
@@ -203,24 +203,24 @@ window.MARKET_BRIEF = {
     },
     "btc": {
       "symbol": "BTC-USD",
-      "price": 84195.02,
-      "change": -263.0659999999916,
-      "changePercent": -0.31147520913508703,
-      "marketTime": 1790836531
+      "price": 83541.91,
+      "change": -916.1759999999922,
+      "changePercent": -1.0847700242697806,
+      "marketTime": 1790841045
     },
     "eth": {
       "symbol": "ETH-USD",
-      "price": 2716.4,
-      "change": 29.473199999999906,
-      "changePercent": 1.0969111625966106,
-      "marketTime": 1790836527
+      "price": 2682.7,
+      "change": -4.226800000000367,
+      "changePercent": -0.15730983069581078,
+      "marketTime": 1790841048
     },
     "bnb": {
       "symbol": "BNB-USD",
-      "price": 770.93,
-      "change": -7.967399999999998,
-      "changePercent": -1.0229075100263523,
-      "marketTime": 1790836529
+      "price": 765.04,
+      "change": -13.857399999999984,
+      "changePercent": -1.779104667700776,
+      "marketTime": 1790841035
     },
     "crcl": {
       "symbol": "CRCL",
