@@ -1,18 +1,18 @@
 window.MARKET_BRIEF = {
-  "generatedAt": "2026-11-05T07:27:03.380Z",
+  "generatedAt": "2026-11-05T08:35:11.184Z",
   "reportDate": "11月5日",
   "updateTime": "08:52 HKT",
   "nextUpdateHour": 8,
   "nextUpdateMinute": 52,
-  "headline": "美股震荡走平0.70%，港股大涨7.03%，半导体重挫仍是主导风险",
+  "headline": "美股震荡走平0.70%，港股大涨6.78%，半导体重挫仍是主导风险",
   "deck": "11/5 美股收盘数据与 11/5 港股最新数据自动汇总。内容基于行情变动生成，不自动编写未经验证的传闻。",
   "tape": [
     "DJIA +1.68%",
     "S&P 500 -0.71%",
     "NASDAQ -3.06%",
-    "HSI +8.29%",
+    "HSI +8.01%",
     "SOX -12.11%",
-    "BTC +2.93%"
+    "BTC +2.89%"
   ],
   "signals": [
     {
@@ -21,7 +21,7 @@ window.MARKET_BRIEF = {
     },
     {
       "label": "港股主线",
-      "value": "大涨7.03%，反弹持续性待确认"
+      "value": "大涨6.78%，反弹持续性待确认"
     },
     {
       "label": "操作基调",
@@ -64,11 +64,11 @@ window.MARKET_BRIEF = {
     "items": [
       {
         "name": "恒生指数",
-        "value": "24,863点，涨8.29%（+1,904点）"
+        "value": "24,797点，涨8.01%（+1,838点）"
       },
       {
         "name": "恒生科技",
-        "value": "4,163点，涨5.78%（+227点）"
+        "value": "4,154点，涨5.55%（+218点）"
       },
       {
         "name": "盘面节奏",
@@ -76,21 +76,21 @@ window.MARKET_BRIEF = {
       },
       {
         "name": "关键位置",
-        "value": "24,900 点附近反复争夺"
+        "value": "24,800 点附近反复争夺"
       },
       {
         "name": "风险点",
         "value": "关注解禁、成交额和南向资金变化"
       }
     ],
-    "signal": "恒指、恒生科技平均+7.03%，港股延续反弹，恒指与科技指数同步走高，但仍需观察成交和持续性。"
+    "signal": "恒指、恒生科技平均+6.78%，港股延续反弹，恒指与科技指数同步走高，但仍需观察成交和持续性。"
   },
   "web3": {
     "title": "24小时行情",
     "items": [
       {
         "name": "比特币",
-        "value": "80,544 美元，涨2.93%（+2,296 美元）"
+        "value": "80,510 美元，涨2.89%（+2,262 美元）"
       },
       {
         "name": "以太坊",
@@ -98,7 +98,7 @@ window.MARKET_BRIEF = {
       },
       {
         "name": "BNB",
-        "value": "713 美元，涨0.17%（+1 美元）"
+        "value": "715 美元，涨0.46%（+3 美元）"
       },
       {
         "name": "Circle",
@@ -107,13 +107,13 @@ window.MARKET_BRIEF = {
       },
       {
         "name": "周期参考",
-        "value": "距 2024年4月 减半约 31 个月，距下次减半渐近，历史上的熊市筑底/分批吸筹阶段；BTC 现价较一年内高点（105,997 美元）回撤 24.01%",
+        "value": "距 2024年4月 减半约 31 个月，距下次减半渐近，历史上的熊市筑底/分批吸筹阶段；BTC 现价较一年内高点（105,997 美元）回撤 24.04%",
         "note": "四年减半周期是历史规律而非必然，ETF 时代节奏可能改变，仅供仓位节奏参考"
       }
     ],
-    "signal": "BTC、ETH、BNB 平均+3.24%，币圈明显走强：持有为主，新仓分批建、控制杠杆，跌破短期支撑再考虑减仓。"
+    "signal": "BTC、ETH、BNB 平均+3.32%，币圈明显走强：持有为主，新仓分批建、控制杠杆，跌破短期支撑再考虑减仓。"
   },
-  "summary": "美股震荡走平0.70%，港股大涨7.03%，半导体重挫仍是主导风险；操作上建议短期谨慎，控制仓位。",
+  "summary": "美股震荡走平0.70%，港股大涨6.78%，半导体重挫仍是主导风险；操作上建议短期谨慎，控制仓位。",
   "sources": [
     "Yahoo Finance chart API"
   ],
@@ -126,17 +126,17 @@ window.MARKET_BRIEF = {
   "rawQuotes": {
     "dow": {
       "symbol": "^DJI",
-      "price": 53356.12,
-      "change": 881.0200000000041,
-      "changePercent": 1.6789296256700874,
-      "marketTime": 1793829080
+      "price": 53356.1,
+      "change": 881,
+      "changePercent": 1.6788915123553838,
+      "marketTime": 1793826000
     },
     "sp500": {
       "symbol": "^GSPC",
       "price": 7688.62,
       "change": -55.35999999999967,
       "changePercent": -0.7148778793333619,
-      "marketTime": 1793829071
+      "marketTime": 1793826000
     },
     "nasdaq": {
       "symbol": "^IXIC",
@@ -189,38 +189,38 @@ window.MARKET_BRIEF = {
     },
     "hsi": {
       "symbol": "^HSI",
-      "price": 24862.53,
-      "change": 1903.8799999999974,
-      "changePercent": 8.29264786910379,
-      "marketTime": 1793862720
+      "price": 24796.98,
+      "change": 1838.329999999998,
+      "changePercent": 8.00713456583901,
+      "marketTime": 1793866120
     },
     "hstech": {
       "symbol": "HSTECH.HK",
-      "price": 4163.35,
-      "change": 227.33000000000038,
-      "changePercent": 5.77563122138608,
-      "marketTime": 1793862720
+      "price": 4154.29,
+      "change": 218.26999999999998,
+      "changePercent": 5.545449464179551,
+      "marketTime": 1793866120
     },
     "btc": {
       "symbol": "BTC-USD",
-      "price": 80544.23,
-      "change": 2295.779999999999,
-      "changePercent": 2.933962270179152,
-      "marketTime": 1793863616
+      "price": 80510.46,
+      "change": 2262.0100000000093,
+      "changePercent": 2.890804865783296,
+      "marketTime": 1793867613
     },
     "eth": {
       "symbol": "ETH-USD",
-      "price": 2423.43,
-      "change": 150.3779999999997,
-      "changePercent": 6.61568675067705,
-      "marketTime": 1793863613
+      "price": 2423.46,
+      "change": 150.4079999999999,
+      "changePercent": 6.617006562102403,
+      "marketTime": 1793867615
     },
     "bnb": {
       "symbol": "BNB-USD",
-      "price": 713.12,
-      "change": 1.2356600000000526,
-      "changePercent": 0.17357594914927513,
-      "marketTime": 1793863611
+      "price": 715.14,
+      "change": 3.2556600000000344,
+      "changePercent": 0.4573299083949557,
+      "marketTime": 1793867612
     },
     "crcl": {
       "symbol": "CRCL",
