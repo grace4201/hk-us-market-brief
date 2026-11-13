@@ -1,0 +1,233 @@
+{
+  "generatedAt": "2026-11-13T07:23:03.846Z",
+  "reportDate": "11月13日",
+  "updateTime": "08:52 HKT",
+  "nextUpdateHour": 8,
+  "nextUpdateMinute": 52,
+  "headline": "美股大涨3.02%，港股大跌3.21%，半导体强势领涨支撑风险偏好",
+  "deck": "11/13 美股收盘数据与 11/13 港股最新数据自动汇总。内容基于行情变动生成，不自动编写未经验证的传闻。",
+  "tape": [
+    "DJIA +1.50%",
+    "S&P 500 +3.25%",
+    "NASDAQ +4.32%",
+    "HSI -3.46%",
+    "SOX +16.60%",
+    "BTC -8.15%"
+  ],
+  "signals": [
+    {
+      "label": "美股主线",
+      "value": "大涨3.02%，半导体强势领涨支撑风险偏好"
+    },
+    {
+      "label": "港股主线",
+      "value": "大跌3.21%，反弹力度偏弱"
+    },
+    {
+      "label": "操作基调",
+      "value": "短期谨慎，控制仓位"
+    }
+  ],
+  "us": {
+    "title": "11/13 收盘",
+    "items": [
+      {
+        "name": "道指",
+        "value": "52,297点，涨1.50%（+774点）"
+      },
+      {
+        "name": "标普500",
+        "value": "7,592点，涨3.25%（+239点）"
+      },
+      {
+        "name": "纳指",
+        "value": "25,366点，涨4.32%（+1,051点）"
+      },
+      {
+        "name": "费半",
+        "value": "涨16.60%（+1,496点）",
+        "note": "观察AI/芯片主线能否继续扩散"
+      },
+      {
+        "name": "芯片股",
+        "value": "英特尔+17.13%、超微+44.73%、台积电ADR+14.84%、辉达-8.49%"
+      },
+      {
+        "name": "Meta",
+        "value": "+3.06%（收 624 美元）"
+      }
+    ],
+    "signal": "美股三大指数平均+3.02%，半导体板块重新走强，风险偏好回到成长主线，但仍需观察高位追涨压力。"
+  },
+  "hk": {
+    "title": "11/13 最新",
+    "items": [
+      {
+        "name": "恒生指数",
+        "value": "23,635点，跌3.46%（-847点）"
+      },
+      {
+        "name": "恒生科技",
+        "value": "3,816点，跌2.96%（-116点）"
+      },
+      {
+        "name": "盘面节奏",
+        "value": "指数承压，反弹持续性不足"
+      },
+      {
+        "name": "关键位置",
+        "value": "23,600 点附近反复争夺"
+      },
+      {
+        "name": "风险点",
+        "value": "关注解禁、成交额和南向资金变化"
+      }
+    ],
+    "signal": "恒指、恒生科技平均-3.21%，港股反弹力度偏弱，恒指与科技指数仍在关键位附近反复，短线以防守和确认支撑为主。"
+  },
+  "web3": {
+    "title": "24小时行情",
+    "items": [
+      {
+        "name": "比特币",
+        "value": "69,095 美元，跌8.15%（-6,128 美元）"
+      },
+      {
+        "name": "以太坊",
+        "value": "1,943 美元，跌8.86%（-189 美元）"
+      },
+      {
+        "name": "BNB",
+        "value": "635 美元，跌7.99%（-55 美元）"
+      },
+      {
+        "name": "Circle",
+        "value": "-8.15%（收 64 美元）",
+        "note": "稳定币 USDC 发行商，Web3 合规化风向标"
+      },
+      {
+        "name": "周期参考",
+        "value": "距 2024年4月 减半约 31 个月，距下次减半渐近，历史上的熊市筑底/分批吸筹阶段；BTC 现价较一年内高点（99,697 美元）回撤 30.70%",
+        "note": "四年减半周期是历史规律而非必然，ETF 时代节奏可能改变，仅供仓位节奏参考"
+      }
+    ],
+    "signal": "BTC、ETH、BNB 平均-8.33%，币圈大幅下挫：以控制风险为先，空仓观望不丢人，别急着接飞刀。"
+  },
+  "summary": "美股大涨3.02%，港股大跌3.21%，半导体强势领涨支撑风险偏好；操作上建议短期谨慎，控制仓位。",
+  "sources": [
+    "Yahoo Finance chart API"
+  ],
+  "marketStatus": {
+    "usStale": false,
+    "hkStale": false,
+    "note": null
+  },
+  "watchlist": [],
+  "rawQuotes": {
+    "dow": {
+      "symbol": "^DJI",
+      "price": 52297.09,
+      "change": 774.0299999999988,
+      "changePercent": 1.5022981942454483,
+      "marketTime": 1794520698
+    },
+    "sp500": {
+      "symbol": "^GSPC",
+      "price": 7592.4,
+      "change": 238.67000000000007,
+      "changePercent": 3.24556381591383,
+      "marketTime": 1794520703
+    },
+    "nasdaq": {
+      "symbol": "^IXIC",
+      "price": 25366.094,
+      "change": 1051.094000000001,
+      "changePercent": 4.3228213037219865,
+      "marketTime": 1794521759
+    },
+    "sox": {
+      "symbol": "^SOX",
+      "price": 10506.674,
+      "change": 1495.5340000000015,
+      "changePercent": 16.596501663496536,
+      "marketTime": 1794521759
+    },
+    "intel": {
+      "symbol": "INTC",
+      "price": 61.2,
+      "change": 8.950000000000003,
+      "changePercent": 17.12918660287082,
+      "marketTime": 1794517201
+    },
+    "amd": {
+      "symbol": "AMD",
+      "price": 585.3,
+      "change": 180.89999999999998,
+      "changePercent": 44.73293768545994,
+      "marketTime": 1794517201
+    },
+    "tsm": {
+      "symbol": "TSM",
+      "price": 405.49,
+      "change": 52.389999999999986,
+      "changePercent": 14.837156612857545,
+      "marketTime": 1794517202
+    },
+    "nvidia": {
+      "symbol": "NVDA",
+      "price": 166.19,
+      "change": -15.409999999999997,
+      "changePercent": -8.485682819383259,
+      "marketTime": 1794517201
+    },
+    "meta": {
+      "symbol": "META",
+      "price": 623.61,
+      "change": 18.529999999999973,
+      "changePercent": 3.062404971243467,
+      "marketTime": 1794517201
+    },
+    "hsi": {
+      "symbol": "^HSI",
+      "price": 23634.67,
+      "change": -847.1900000000023,
+      "changePercent": -3.4604805353841672,
+      "marketTime": 1794553680
+    },
+    "hstech": {
+      "symbol": "HSTECH.HK",
+      "price": 3815.61,
+      "change": -116.31999999999971,
+      "changePercent": -2.9583436124244256,
+      "marketTime": 1794553682
+    },
+    "btc": {
+      "symbol": "BTC-USD",
+      "price": 69095.25,
+      "change": -6127.899999999994,
+      "changePercent": -8.146295389118901,
+      "marketTime": 1794554581
+    },
+    "eth": {
+      "symbol": "ETH-USD",
+      "price": 1942.62,
+      "change": -188.87850000000026,
+      "changePercent": -8.86130109873407,
+      "marketTime": 1794554580
+    },
+    "bnb": {
+      "symbol": "BNB-USD",
+      "price": 634.92,
+      "change": -55.155200000000036,
+      "changePercent": -7.992636164870152,
+      "marketTime": 1794554577
+    },
+    "crcl": {
+      "symbol": "CRCL",
+      "price": 63.82,
+      "change": -5.660000000000004,
+      "changePercent": -8.146229130685095,
+      "marketTime": 1794517202
+    }
+  }
+}
