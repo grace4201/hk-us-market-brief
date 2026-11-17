@@ -1,5 +1,5 @@
 window.MARKET_BRIEF = {
-  "generatedAt": "2026-11-17T08:32:39.468Z",
+  "generatedAt": "2026-11-17T09:45:27.194Z",
   "reportDate": "11月17日",
   "updateTime": "08:52 HKT",
   "nextUpdateHour": 8,
@@ -12,7 +12,7 @@ window.MARKET_BRIEF = {
     "NASDAQ -2.94%",
     "HSI -4.27%",
     "SOX -4.22%",
-    "BTC -5.79%"
+    "BTC -5.71%"
   ],
   "signals": [
     {
@@ -50,7 +50,7 @@ window.MARKET_BRIEF = {
       },
       {
         "name": "芯片股",
-        "value": "英特尔-6.57%、超微-0.85%、台积电ADR-3.90%、辉达-12.61%"
+        "value": "英特尔-6.62%、超微-0.85%、台积电ADR-3.90%、辉达-12.61%"
       },
       {
         "name": "Meta",
@@ -90,15 +90,15 @@ window.MARKET_BRIEF = {
     "items": [
       {
         "name": "比特币",
-        "value": "64,300 美元，跌5.79%（-3,949 美元）"
+        "value": "64,354 美元，跌5.71%（-3,895 美元）"
       },
       {
         "name": "以太坊",
-        "value": "1,821 美元，跌5.52%（-106 美元）"
+        "value": "1,813 美元，跌5.94%（-115 美元）"
       },
       {
         "name": "BNB",
-        "value": "591 美元，跌6.07%（-38 美元）"
+        "value": "590 美元，跌6.29%（-40 美元）"
       },
       {
         "name": "Circle",
@@ -107,11 +107,11 @@ window.MARKET_BRIEF = {
       },
       {
         "name": "周期参考",
-        "value": "距 2024年4月 减半约 31 个月，距下次减半渐近，历史上的熊市筑底/分批吸筹阶段；BTC 现价较一年内高点（96,929 美元）回撤 33.66%",
+        "value": "距 2024年4月 减半约 31 个月，距下次减半渐近，历史上的熊市筑底/分批吸筹阶段；BTC 现价较一年内高点（96,929 美元）回撤 33.61%",
         "note": "四年减半周期是历史规律而非必然，ETF 时代节奏可能改变，仅供仓位节奏参考"
       }
     ],
-    "signal": "BTC、ETH、BNB 平均-5.79%，币圈大幅下挫：以控制风险为先，空仓观望不丢人，别急着接飞刀。"
+    "signal": "BTC、ETH、BNB 平均-5.98%，币圈大幅下挫：以控制风险为先，空仓观望不丢人，别急着接飞刀。"
   },
   "summary": "美股回落2.07%，港股回落2.71%，半导体重挫仍是主导风险；操作上建议短期谨慎，控制仓位。",
   "sources": [
@@ -154,9 +154,9 @@ window.MARKET_BRIEF = {
     },
     "intel": {
       "symbol": "INTC",
-      "price": 55.47,
-      "change": -3.8999999999999986,
-      "changePercent": -6.5689742294087905,
+      "price": 55.442,
+      "change": -3.9279999999999973,
+      "changePercent": -6.6161360956712105,
       "marketTime": 1794862800
     },
     "amd": {
@@ -203,24 +203,24 @@ window.MARKET_BRIEF = {
     },
     "btc": {
       "symbol": "BTC-USD",
-      "price": 64300,
-      "change": -3949.270000000004,
-      "changePercent": -5.786538083117964,
-      "marketTime": 1794904354
+      "price": 64354.45,
+      "change": -3894.820000000007,
+      "changePercent": -5.706757010001729,
+      "marketTime": 1794908720
     },
     "eth": {
       "symbol": "ETH-USD",
-      "price": 1821.17,
-      "change": -106.4188999999999,
-      "changePercent": -5.520829674833669,
-      "marketTime": 1794904349
+      "price": 1813.05,
+      "change": -114.53890000000001,
+      "changePercent": -5.942081322423054,
+      "marketTime": 1794908722
     },
     "bnb": {
       "symbol": "BNB-USD",
-      "price": 591.23,
-      "change": -38.20330000000001,
-      "changePercent": -6.069475510749115,
-      "marketTime": 1794904353
+      "price": 589.82,
+      "change": -39.61329999999998,
+      "changePercent": -6.293486537811072,
+      "marketTime": 1794908697
     },
     "crcl": {
       "symbol": "CRCL",
